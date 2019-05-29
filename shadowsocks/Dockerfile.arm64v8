@@ -1,4 +1,5 @@
-FROM arm64v8/alpine:3.9
+FROM multiarch/alpine:aarch64-edge
+
 
 LABEL maintainer="mritd <mritd@linux.com>"
 
@@ -13,6 +14,9 @@ ENV PLUGIN_OBFS_DOWNLOAD_URL https://github.com/shadowsocks/simple-obfs.git
 ENV PLUGIN_V2RAY_DOWNLOAD_URL https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.1.0/v2ray-plugin-linux-arm-v1.1.0.tar.gz
 ENV LINUX_HEADERS_DOWNLOAD_URL=http://dl-cdn.alpinelinux.org/alpine/v3.7/main/aarch64/linux-headers-4.4.6-r2.apk
 
+
+# RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/main > /etc/apk/repositories; \
+#     echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories; \
 
 RUN set -xe; \
     apk upgrade \
