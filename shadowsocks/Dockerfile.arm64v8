@@ -75,7 +75,7 @@ RUN set -xe; \
 
 SHELL ["/bin/bash"]
 
-COPY runit /etc/service
-COPY entrypoint.sh /entrypoint.sh
+COPY ./runit /etc/service
+COPY ./entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
